@@ -1,0 +1,221 @@
+@import "fonts";
+
+$mainColor: #241c15;
+$linkColor: #007c89;
+$hoverLinkColor: #1e474e;
+
+::selection {
+  color: $mainColor;
+  background: rgba(255, 224, 27, 0.5);
+}
+
+body {
+  background-color: #f6f3f1;
+  font-family: "Graphik-Regular", "Helvetica Neue", sans-serif;
+}
+
+.navbar {
+  background-color: #ffffff;
+  border-bottom: .0625rem solid #dbd9d2;
+
+  & .nav-item {
+    min-width: 7.5rem;
+    text-align: center;
+    margin-left: .75rem;
+
+    &:last-child {
+      & .nav-link {
+        font-family: "Graphik-Regular", "Helvetica Neue", sans-serif;
+        color: #ffffff;
+        background-color: $linkColor;
+        box-shadow: inset 0 0 0 0.0625rem $linkColor;
+
+        &:hover {
+          background-color: $hoverLinkColor;
+          box-shadow: inset 0 0 0 0.0625rem $hoverLinkColor;
+        }
+      }
+    }
+  }
+
+  & .nav-link {
+    font-family: "Graphik-Semibold", "Helvetica Neue", sans-serif;
+    font-size: .9375rem;
+    color: $mainColor;
+    padding: .8125rem;
+    box-shadow: inset 0 0 0 0.0625rem rgba(36, 28, 21, .4);
+    transition: all .15s linear;
+
+    &:hover {
+      box-shadow: inset 0 0 0 0.0625rem $mainColor;
+    }
+  }
+}
+
+.form {
+  &__logo {
+    height: 20vmin;
+  }
+
+  &__title {
+    font-family: "CooperBT-Light", "Helvetica Neue", sans-serif;
+    font-size: 2.75rem;
+    text-transform: capitalize;
+    word-spacing: -0.2rem;
+  }
+
+  &__group {
+    margin-bottom: 1.5rem;
+
+    &.required {
+      & .form__label:after {
+        content: "*";
+        color: red;
+        margin-left: 3px;
+      }
+    }
+
+    &:last-of-type {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__label {
+    font-family: "Graphik-Medium", "Helvetica Neue", sans-serif;
+    font-size: 0.9375rem;
+    color: $mainColor;
+    text-transform: capitalize;
+  }
+
+  & input {
+    min-height: 3.25rem;
+    font-size: 1rem;
+    padding: 0 0.9375rem;
+    border: 1px solid rgba(36, 28, 21, 0.3);
+    border-radius: 2px;
+    line-height: 1.25rem;
+    transition: all 0.2s ease-in-out 0s;
+
+    &:focus {
+      outline: none;
+      border: 1px solid $linkColor;
+      box-shadow: inset 0 0 0 1px $linkColor;
+    }
+  }
+
+  &__btn {
+    font-family: "Graphik-Medium", "Helvetica Neue", sans-serif;
+    color: #ffffff;
+    background-color: $linkColor;
+    padding: 0.6875rem 2rem;
+    margin: 1.125rem 0 3rem;
+    border-radius: 2px;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $hoverLinkColor;
+    }
+
+    &:focus {
+      box-shadow: none;
+      background-color: $hoverLinkColor;
+    }
+
+    &Group {
+      display: inline-flex;
+      justify-content: space-between;
+      width: 100%;
+
+      & .form__btn {
+        &:first-child {
+          width: 70%;
+        }
+      }
+    }
+  }
+}
+
+.alert {
+  font-size: 1rem;
+  padding: 12px 15px;
+  border-radius: 2px;
+  color: $mainColor;
+
+  &-danger {
+    background-color: #fbcfbd;
+  }
+
+  &-warning {
+    background-color: #fbeeca;
+  }
+
+  &__icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  &__text {
+    font-family: "Graphik-Light", "Helvetica Neue", sans-serif;
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+}
+
+.modal {
+  display: block;
+
+  &__logo {
+    height: 20vmin;
+  }
+
+  &__btn {
+    font-family: "Graphik-Medium", "Helvetica Neue", sans-serif;
+    color: #ffffff;
+    background-color: $linkColor;
+    padding: 0.6875rem 2rem;
+    border: none;
+    border-radius: 2px;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $hoverLinkColor;
+    }
+
+    &:focus {
+      box-shadow: none;
+      background-color: $hoverLinkColor;
+    }
+  }
+
+  & .close {
+    color: $mainColor;
+
+    &:hover {
+      color: $hoverLinkColor;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .form {
+    &__btn {
+      &Group {
+        display: block;
+
+        & .form__btn {
+          width: 100%;
+          margin-bottom: 1rem;
+
+          &:first-child {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
