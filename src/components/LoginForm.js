@@ -90,8 +90,8 @@ class LoginForm extends Component {
                     errorText={this.state.errorBlockText}
                 /> : null }
                 <form>
-                    <InputField id={'username'} type={'text'} value={this.state.username} onChange={this.handleChange}/>
-                    <InputField id={'password'} type={'password'} value={this.state.password} onChange={this.handleChange}/>
+                    <InputField id={'username'} label={'username'} type={'text'} value={this.state.username} onChange={this.handleChange}/>
+                    <InputField id={'password'} label={'password'} type={'password'} value={this.state.password} onChange={this.handleChange}/>
 
                     <button type="submit" className="form__btn btn btn-block" onClick={this.validateForm}>
                         Log In

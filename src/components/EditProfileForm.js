@@ -70,10 +70,10 @@ class EditProfileForm extends Component {
                     errorText={this.state.errorBlockText}
                 /> : null }
                 <form>
-                    <InputField id={'firstName'} type={'text'} value={this.state.firstName} onChange={this.handleChange} required={true}/>
-                    <InputField id={'lastName'} type={'text'} value={this.state.lastName} onChange={this.handleChange}/>
-                    <InputField id={'password'} type={'password'} value={this.state.password} onChange={this.handleChange} required={true}/>
-                    <InputField id={'repeatPassword'} type={'password'} value={this.state.repeatPassword} onChange={this.handleChange} required={true}/>
+                    <InputField id={'firstName'} label={'First name'} type={'text'} value={this.state.firstName} onChange={this.handleChange} required={true}/>
+                    <InputField id={'lastName'} label={'Last name'} type={'text'} value={this.state.lastName} onChange={this.handleChange}/>
+                    <InputField id={'password'} label={'Password'} type={'password'} value={this.state.password} onChange={this.handleChange} required={true}/>
+                    <InputField id={'repeatPassword'} label={'Repeat password'} type={'password'} value={this.state.repeatPassword} onChange={this.handleChange} required={true}/>
 
                     <div className="form__btnGroup">
                         <button type="submit" className="form__btn btn" onClick={this.validateForm}>
